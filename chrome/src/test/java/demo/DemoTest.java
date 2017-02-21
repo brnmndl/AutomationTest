@@ -42,8 +42,8 @@ public class DemoTest {
       //searchEdit.submit();
 	  
 	  ChromeDriverService srvc = new ChromeDriverService.Builder()
-	  							 .usingDriverExecutable(new File("/home/ec2-user/jenkins/workspace/chromedriver"))
-	  							 .withLogFile(new File("/home/ec2-user/jenkins/workspace/chromedrvr.log"))
+	  							 .usingDriverExecutable(new File("C:\\DevOps\\chromedriver.exe"))
+	  							 .withLogFile(new File("C:\\DevOps\\chromedrvr.log"))
 	  							 .usingAnyFreePort()
 	  							 .build();
 	  srvc.start();
