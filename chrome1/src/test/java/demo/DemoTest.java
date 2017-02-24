@@ -28,18 +28,15 @@ public class DemoTest {
   @Test
   public void f() throws IOException 
   {
-	  //new DesiredCapabilities();
-      //URL serverurl = new URL("http://localhost:9515");
-	  System.setProperty("webdriver.chrome.driver", "home/ubuntu/Chrome/chromedriver");
+
+	  System.setProperty("webdriver.chrome.driver", "/home/ubuntu/Chrome/chromedriver");
       ChromeOptions options = new ChromeOptions();
       options.setBinary("/usr/bin/google-chrome");
       DesiredCapabilities capabilities = DesiredCapabilities.chrome();
       capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-      WebDriver driver = new RemoteWebDriver(options);
+      WebDriver driver = new ChromeDriver(options);
       driver.get("http://www.google.com");
-      //WebElement searchEdit = driver.findElement(By.name("q"));
-      //searchEdit.sendKeys("Selftechy on google");
-      //searchEdit.submit();
+
 	  
 	  /*ChromeDriverService srvc = new ChromeDriverService.Builder()
 	  							 .usingDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver"))
