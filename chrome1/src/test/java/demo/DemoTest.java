@@ -30,18 +30,18 @@ public class DemoTest {
   {
 	  //new DesiredCapabilities();
       //URL serverurl = new URL("http://localhost:9515");
-	  /*System.setProperty("webdriver.chrome.driver", "/home/ec2-user/jenkins/workspace/chromedriver");
+	  System.setProperty("webdriver.chrome.driver", "/home/ec2-user/jenkins/workspace/chromedriver");
       ChromeOptions options = new ChromeOptions();
       options.setBinary("/usr/bin/google-chrome");
-      /*DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+      DesiredCapabilities capabilities = DesiredCapabilities.chrome();
       capabilities.setCapability(ChromeOptions.CAPABILITY, options);
       WebDriver driver = new ChromeDriver(options);
-      driver.get("http://www.google.com");*/
+      driver.get("http://www.google.com");
       //WebElement searchEdit = driver.findElement(By.name("q"));
       //searchEdit.sendKeys("Selftechy on google");
       //searchEdit.submit();
 	  
-	  ChromeDriverService srvc = new ChromeDriverService.Builder()
+	  /*ChromeDriverService srvc = new ChromeDriverService.Builder()
 	  							 .usingDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver"))
 	  							 .withLogFile(new File("/home/ubuntu/Chrome/chromedrvr.log"))
 	  							 .usingAnyFreePort()
@@ -50,7 +50,7 @@ public class DemoTest {
 	  
 	  
 	  WebDriver driver = new RemoteWebDriver(srvc.getUrl(),DesiredCapabilities.chrome());
-	  driver.get("http://www.google.com");
+	  driver.get("http://www.google.com");*/
 	  
   }
 }
