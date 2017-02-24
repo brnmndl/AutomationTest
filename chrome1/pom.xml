@@ -26,7 +26,7 @@
 				<version>2.19.1</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>.\src\test\java\demoNG.xml</suiteXmlFile>
+						<suiteXmlFile>/home/ubuntu/jenkins/workspace/AutomationTest1/chrome1/src/test/java/demoNG.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
