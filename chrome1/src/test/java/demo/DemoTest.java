@@ -42,7 +42,7 @@ public class DemoTest {
       //searchEdit.submit();
 	  
 	  ChromeDriverService srvc = new ChromeDriverService.Builder()
-	  							 .usingDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver"))
+	  							 .usingDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver.exe"))
 	  							 .withLogFile(new File("/home/ubuntu/Chrome/chromedrvr.log"))
 	  							 .usingAnyFreePort()
 	  							 .build();
