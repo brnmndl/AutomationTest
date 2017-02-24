@@ -34,7 +34,7 @@ public class DemoTest {
       options.setBinary("/usr/bin/google-chrome");
       DesiredCapabilities capabilities = DesiredCapabilities.chrome();
       capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-      WebDriver driver = new RemoteWebDriver(options);
+      WebDriver driver = new ChromeDriver(options);
       driver.get("http://www.google.com");
 
 	  
