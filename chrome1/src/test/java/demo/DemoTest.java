@@ -30,7 +30,7 @@ public class DemoTest {
   {
 	  //new DesiredCapabilities();
       //URL serverurl = new URL("http://localhost:9515");
-	  System.setProperty("webdriver.chrome.driver", "/home/ec2-user/jenkins/workspace/chromedriver");
+	  System.setProperty("webdriver.chrome.driver", "home/ubuntu/Chrome/chromedriver");
       ChromeOptions options = new ChromeOptions();
       options.setBinary("/usr/bin/google-chrome");
       DesiredCapabilities capabilities = DesiredCapabilities.chrome();
