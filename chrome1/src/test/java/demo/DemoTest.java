@@ -30,11 +30,13 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 
 public class DemoTest {
-	
+
+  public static WebDriver driver;
+  public static ChromeDriverService service;
   @BeforeClass
   public static void createAndStartService() {
     service = new ChromeDriverService.Builder()
-        .usingChromeDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver"))
+        .usingDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver"))
         .usingAnyFreePort()
         .build();
     service.start();
