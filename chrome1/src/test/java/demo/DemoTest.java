@@ -49,7 +49,7 @@ public class DemoTest {
 	  							 .usingAnyFreePort()
 	  							 .build();
 	  srvc.start();
-	  WebDriver driver = new RemoteWebDriver(srvc.getUrl(),DesiredCapabilities.chrome());
+	  WebDriver driver = new RemoteWebDriver("http://127.0.0.1:9515",DesiredCapabilities.chrome());
 	  driver.get("http://www.google.com");
 	  ///////////////////////////////////////////////////////////////////////////////////////////
   }
