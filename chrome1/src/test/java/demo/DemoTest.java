@@ -25,19 +25,44 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 
 public class DemoTest {
+	
+  @BeforeClass
+  public static void createAndStartService() {
+    service = new ChromeDriverService.Builder()
+        .usingChromeDriverExecutable(new File("path/to/my/chromedriver"))
+        .usingAnyFreePort()
+        .build();
+    service.start();
+  }
+
+  @AfterClass
+  public static void createAndStopService() {
+    service.stop();
+  }
+
+  @Before
+  public void createDriver() {
+    driver = new RemoteWebDriver(service.getUrl(),
+        DesiredCapabilities.chrome());
+  }
+
+  @After
+  public void quitDriver() {
+    driver.quit();
+  }
+
   @Test
   public void f() throws IOException 
   {
 
-	  System.setProperty("webdriver.chrome.driver", "/home/ubuntu/Chrome/chromedriver");
+	  /*System.setProperty("webdriver.chrome.driver", "/home/ubuntu/Chrome/chromedriver");
       ChromeOptions options = new ChromeOptions();
       options.setBinary("/usr/bin/google-chrome");
       DesiredCapabilities capabilities = DesiredCapabilities.chrome();
       capabilities.setCapability(ChromeOptions.CAPABILITY, options);
       WebDriver driver = new ChromeDriver(options);
-      driver.get("http://www.google.com");
-
-	  
+      driver.get("http://www.google.com");*/
+	  /////////////////////////////////////////////////////////////////////////////////////////	  
 	  /*ChromeDriverService srvc = new ChromeDriverService.Builder()
 	  							 .usingDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver"))
 	  							 .withLogFile(new File("/home/ubuntu/Chrome/chromedrvr.log"))
@@ -48,6 +73,9 @@ public class DemoTest {
 	  
 	  WebDriver driver = new RemoteWebDriver(srvc.getUrl(),DesiredCapabilities.chrome());
 	  driver.get("http://www.google.com");*/
+	  ////////////////////////////////////////////////////////////////////////////////////////////
+	  driver.get("http://www.google.com");
+	  
 	  
   }
 }
