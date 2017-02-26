@@ -43,14 +43,21 @@ public class DemoTest {
       WebDriver driver = new ChromeDriver(options);
       driver.get("http://www.google.com");*/
 	  /////////////////////////////////////////////////////////////////////////////////////////	  
-	  ChromeDriverService srvc = new ChromeDriverService.Builder()
+	  try
+	  {
+		ChromeDriverService srvc = new ChromeDriverService.Builder()
 	  							 .usingDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver"))
 	  							 .withLogFile(new File("/home/ubuntu/Chrome/chromedrvr.log"))
 	  							 .usingAnyFreePort()
 	  							 .build();
-	  srvc.start();
-	  WebDriver driver = new RemoteWebDriver("http://127.0.0.1:9515",DesiredCapabilities.chrome());
-	  driver.get("http://www.google.com");
+		srvc.start();
+		WebDriver driver = new RemoteWebDriver(new URL("http://127.0.0.1:9515"),DesiredCapabilities.chrome());
+		driver.get("http://www.google.com");
+	  }
+	  catch(Exception e)
+	  {
+		  e.printStackTrace();
+	  }
 	  ///////////////////////////////////////////////////////////////////////////////////////////
   }
 }
