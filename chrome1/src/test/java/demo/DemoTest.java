@@ -35,11 +35,18 @@ public class DemoTest {
   public static ChromeDriverService service;
   @BeforeClass
   public static void createAndStartService() {
-    service = new ChromeDriverService.Builder()
-        .usingDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver"))
-        .usingAnyFreePort()
-        .build();
-    service.start();
+    try
+	{
+		service = new ChromeDriverService.Builder()
+			.usingDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver"))
+			.usingAnyFreePort()
+			.build();
+		service.start();
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
   }
 
   @AfterClass
