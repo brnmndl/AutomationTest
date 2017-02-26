@@ -31,53 +31,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DemoTest {
 
-  public static WebDriver driver;
-  public static ChromeDriverService service;
-  @BeforeClass
-  public static void createAndStartService() {
-    try
-	{
-		service = new ChromeDriverService.Builder()
-			.usingDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver"))
-			.usingAnyFreePort()
-			.build();
-		service.start();
-	}
-	catch(Exception e)
-	{
-		e.printStackTrace();
-	}
-  }
-
-  @AfterClass
-  public static void createAndStopService() {
-    service.stop();
-  }
-
-  @BeforeTest
-  public void createDriver() {
-	try
-	{	
-		driver = new RemoteWebDriver(DesiredCapabilities.chrome());
-	}
-	catch(Exception e)
-	{
-		e.printStackTrace();
-	}
-  }
-
-  @AfterTest
-  public void quitDriver() {
-    try
-	{
-		driver.quit();
-	}
-	catch(Exception e)
-	{
-		e.printStackTrace();
-	}
-  }
-
   @Test
   public void f() throws IOException 
   {
@@ -90,22 +43,14 @@ public class DemoTest {
       WebDriver driver = new ChromeDriver(options);
       driver.get("http://www.google.com");*/
 	  /////////////////////////////////////////////////////////////////////////////////////////	  
-	  /*ChromeDriverService srvc = new ChromeDriverService.Builder()
+	  ChromeDriverService srvc = new ChromeDriverService.Builder()
 	  							 .usingDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver"))
 	  							 .withLogFile(new File("/home/ubuntu/Chrome/chromedrvr.log"))
 	  							 .usingAnyFreePort()
 	  							 .build();
 	  srvc.start();
 	  WebDriver driver = new RemoteWebDriver(srvc.getUrl(),DesiredCapabilities.chrome());
-	  driver.get("http://www.google.com");*/
-	  ////////////////////////////////////////////////////////////////////////////////////////////
-	  try
-	  {
-		driver.get("http://www.google.com");
-	  }
-	  catch(Exception e)
-	  {
-		  e.printStackTrace();
-	  }
+	  driver.get("http://www.google.com");
+	  ///////////////////////////////////////////////////////////////////////////////////////////
   }
 }
