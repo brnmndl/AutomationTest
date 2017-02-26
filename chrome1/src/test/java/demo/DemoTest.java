@@ -56,8 +56,7 @@ public class DemoTest {
 
   @BeforeTest
   public void createDriver() {
-    driver = new RemoteWebDriver(service.getUrl(),
-        DesiredCapabilities.chrome());
+    driver = new RemoteWebDriver(DesiredCapabilities.chrome());
   }
 
   @AfterTest
@@ -83,8 +82,6 @@ public class DemoTest {
 	  							 .usingAnyFreePort()
 	  							 .build();
 	  srvc.start();
-	  
-	  
 	  WebDriver driver = new RemoteWebDriver(srvc.getUrl(),DesiredCapabilities.chrome());
 	  driver.get("http://www.google.com");*/
 	  ////////////////////////////////////////////////////////////////////////////////////////////
