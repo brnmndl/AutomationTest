@@ -68,7 +68,14 @@ public class DemoTest {
 
   @AfterTest
   public void quitDriver() {
-    driver.quit();
+    try
+	{
+		driver.quit();
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
   }
 
   @Test
@@ -92,8 +99,13 @@ public class DemoTest {
 	  WebDriver driver = new RemoteWebDriver(srvc.getUrl(),DesiredCapabilities.chrome());
 	  driver.get("http://www.google.com");*/
 	  ////////////////////////////////////////////////////////////////////////////////////////////
-	  driver.get("http://www.google.com");
-	  
-	  
+	  try
+	  {
+		driver.get("http://www.google.com");
+	  }
+	  catch(Exception e)
+	  {
+		  e.printStackTrace();
+	  }
   }
 }
