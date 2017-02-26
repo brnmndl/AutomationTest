@@ -56,7 +56,14 @@ public class DemoTest {
 
   @BeforeTest
   public void createDriver() {
-    driver = new RemoteWebDriver(new URL ("http://localhost:9515/"),DesiredCapabilities.chrome());
+	try
+	{	
+		driver = new RemoteWebDriver(new URL ("http://localhost:9515/"),DesiredCapabilities.chrome());
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
   }
 
   @AfterTest
