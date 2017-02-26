@@ -9,6 +9,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.*;
@@ -29,7 +34,7 @@ public class DemoTest {
   @BeforeClass
   public static void createAndStartService() {
     service = new ChromeDriverService.Builder()
-        .usingChromeDriverExecutable(new File("path/to/my/chromedriver"))
+        .usingChromeDriverExecutable(new File("/home/ubuntu/Chrome/chromedriver"))
         .usingAnyFreePort()
         .build();
     service.start();
@@ -40,13 +45,13 @@ public class DemoTest {
     service.stop();
   }
 
-  @Before
+  @BeforeTest
   public void createDriver() {
     driver = new RemoteWebDriver(service.getUrl(),
         DesiredCapabilities.chrome());
   }
 
-  @After
+  @AfterTest
   public void quitDriver() {
     driver.quit();
   }
